@@ -1,11 +1,10 @@
-function App() {
-  return (
-    <div>
-      <header>
-        Clean up.
-      </header>
-    </div>
-  );
-}
+import React from "react";
+import {Hero} from "./components/Hero";
 
-export default App;
+export const App = () => {
+  return (
+    <>
+      <Hero />
+    </>
+  )
+}
