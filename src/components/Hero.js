@@ -4,7 +4,6 @@ import {Button} from "./styled/Button";
 import {Section} from "./styled/Section";
 
 const H1 = styled.h1 `
-  text-style: uppercase;
   line-height: 1.2;
   letter-spacing: -0.5px;
   font-size: 3.5em;
@@ -12,11 +11,15 @@ const H1 = styled.h1 `
 `
 
 const H3 = styled.h3 `
-  text-style: uppercase;
   line-height: 0.8;
   letter-spacing: -0.5px;
-  font-size: 2em;
+  font-size: 1.8em;
   color: var(--light-border-color);
+`
+
+const Divider = styled.div `
+  display: block;
+  padding: 15px 0;
 `
 
 export const Hero = () => {
@@ -25,6 +28,7 @@ export const Hero = () => {
     <Section>
     <H1>Hi, I'm Clarissa.</H1>
     <H3>I love coding in teams.</H3>
+    <Divider></Divider>
     <Button>Projects</Button>
     <Button>Contact</Button>
     </Section>
