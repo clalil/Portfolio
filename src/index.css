@@ -15,14 +15,13 @@ body {
 	letter-spacing: 0.5;
 }
 :root {
-	--black: #000;
-	--dark-border-color: rgba(75,74,74,0.5);
-	--hero-bg-color: linear-gradient(
-	20deg
-	, rgb(33, 33, 33), rgb(66, 66, 66));
+	--black: rgba(75,74,74,0.5);
+	--fifth-shade: #ffcdb2;
+	--first-shade: #6d6875;
+	--fourth-shade: #ffb4a2;
 	--light-border-color: rgb(221,221,221);
-	--main-color: #ff25d0;
 	--medium-border-color: rgba(126,125,125,0.5);
-	--paragraph-color: rgb(48,48,45);
+	--second-shade: #b5838d;
+	--third-shade: #e5989b;
 	--white: #f5f5f5;
 }

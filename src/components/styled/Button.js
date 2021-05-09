@@ -9,13 +9,11 @@ border-radius: 10px;
 padding: 0.5rem 0;
 margin: 0.5rem 1rem;
 width: 11rem;
-background: linear-gradient(
-  20deg
-  , rgb(33, 33, 33), rgb(66, 66, 66));
-color: var(--main-color);
+background: var(--second-shade);
+color: var(--white);
 border: 2px solid white;
 `
 
 export const Button = ({children}) => {
-  return <PrimaryBtn>{children}</PrimaryBtn>;
+  return <PrimaryBtn>{children}</PrimaryBtn>
 };
