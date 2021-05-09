@@ -1,5 +1,12 @@
 import React, { useState, useEffect} from "react";
+import styled from "styled-components";
 import {Card} from "./Card";
+import {Section} from "./styled/Section";
+
+const Gallery = styled.div `
+  display: flex;
+  flex-wrap: wrap;
+`
 
 export const Projects = () => {
   const [pinnedProjects, SetPinnedProjects] = useState([])
@@ -10,12 +17,22 @@ export const Projects = () => {
       .then(projects => { SetPinnedProjects(projects) })
   }, [])
 
-  return !pinnedProjects.length ? 
-  <h1>Loading...</h1>
-  :
-  (
-    pinnedProjects.map(project => {
-      return <Card project={project} key={project.repo} />
-    })
+  let pinnedList = pinnedProjects.map(project => {
+    return <Card project={project} key={project.repo} />
+  })
+
+  return (
+    <Section>
+      {
+      !pinnedProjects.length ? 
+        <h1>Loading...</h1>
+        :
+        (
+          <Gallery>
+            {pinnedList}
+          </Gallery>
+        )
+      }
+    </Section>
   )
 };

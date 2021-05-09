@@ -8,13 +8,12 @@ const Wrapper = styled.section`
   text-align: center;
   display: block;
   height: 530px;
-  background-color: #6d6875;
 
   @media screen and ${device.isDesktop} {
     padding: 60px 0;
   }
 `
 
-export const Section = ({children}) => {
-  return <Wrapper>{children}</Wrapper>
+export const Section = ({className, children}) => {
+  return <Wrapper className={className}>{children}</Wrapper>
 };
