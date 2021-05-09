@@ -6,7 +6,7 @@ const Item = styled.div `
   margin: 1rem;
   box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
 	overflow: hidden;
-  border-radius: 10rem;
+  border-radius: 1rem;
 `
 
 const Image = styled.div `
