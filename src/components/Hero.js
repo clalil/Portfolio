@@ -2,16 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import {Button} from "./styled/Button";
 import {Section} from "./styled/Section";
+import {Header} from "./styled/Header";
 
 const HeroSection = styled(Section)`
   background: var(--first-shade);
-`
-
-const H1 = styled.h1 `
-  line-height: 1.2;
-  letter-spacing: -0.5px;
-  font-size: 3.5em;
-  color: var(--white);
 `
 
 const H3 = styled.h3 `
@@ -30,7 +24,7 @@ export const Hero = () => {
   return(
     <>
     <HeroSection>
-      <H1>Hi, I'm Clarissa.</H1>
+      <Header>Hi, I'm Clarissa.</Header>
       <H3>I love coding in teams.</H3>
       <Divider />
       <Button>Projects</Button>
