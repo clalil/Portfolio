@@ -6,6 +6,7 @@ const H1 = styled.h1 `
   letter-spacing: -0.5px;
   font-size: 3.5em;
   color: var(--white);
+  margin: 40px;
 `
 
 export const Header = ({children}) => {

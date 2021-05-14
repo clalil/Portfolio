@@ -3,23 +3,25 @@ import styled from "styled-components";
 import {Card} from "./Card";
 import {Section} from "./styled/Section";
 import {Header} from "./styled/Header";
+import {device} from "./styled/Constants";
 
 const ProjectsSection = styled(Section)`
   background: var(--second-shade);
   height: auto;
-  z-index: 1;
-  position: relative;
 `
 
 const Gallery = styled.div `
 display: grid;
 grid-template-columns: repeat(auto-fit, 200px);
 grid-column-gap: 40px;
-grid-row-gap: 40px;
-max-width: 100%;
-max-height: 100%;
+min-height: 700px;
 overflow: hidden;
+overflow: -moz-scrollbars-horizontal;
 justify-content: center;
+
+@media screen and (min-width: ${device.isDesktop}) {
+  min-height: 600px;
+}
 `
 
 export const Projects = () => {
