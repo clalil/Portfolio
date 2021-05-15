@@ -15,9 +15,15 @@ const H3 = styled.h3 `
   color: var(--light-border-color);
 `
 
-const Divider = styled.div `
-  display: block;
-  padding: 40px 0;
+const Quote = styled.div `
+  font-style: italic;
+  margin: 2rem;
+  color: var(--light-border-color);
+    &:hover {
+      cursor: pointer;
+      color: var(--white);
+      text-shadow: 1px 0 0 rgb(160,160,160);
+    }
 `
 
 export const Hero = () => {
@@ -25,10 +31,13 @@ export const Hero = () => {
     <>
     <HeroSection>
       <Header>Hi, I'm Clarissa.</Header>
-      <H3>I love coding in teams.</H3>
-      <Divider />
-      <Button>Projects</Button>
-      <Button>Contact</Button>
+        <H3>I love coding in teams.</H3>
+        <Quote>
+          <p>'Clarissa is a hard worker, commited and ambitious. She is a quick study and not afraid to ask questions. A great addition to any team.'</p>
+          <p>~ S. Steindorsson</p>
+        </Quote>
+        <Button>Projects</Button>
+        <Button>Contact</Button>
     </HeroSection>
     </>
   )
