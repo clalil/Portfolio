@@ -9,7 +9,7 @@ const HeroSection = styled(Section)`
 `
 
 const H3 = styled.h3 `
-  line-height: 0.8;
+  line-height: 0.;
   letter-spacing: -0.5px;
   font-size: 1.8em;
   color: var(--light-border-color);
@@ -17,7 +17,7 @@ const H3 = styled.h3 `
 
 const Divider = styled.div `
   display: block;
-  padding: 15px 0;
+  padding: 40px 0;
 `
 
 export const Hero = () => {

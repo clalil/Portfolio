@@ -37,27 +37,28 @@ const Content = styled.div `
 `
 
 const Wrapper = styled.div `
-display: table;
-width: 100%;
-height: 100%;
+  display: table;
+  width: 100%;
+  height: 100%;
 ` 
 
 const TextWrapper = styled.div `
-display: table-cell;
-padding: 1em;
-vertical-align: middle;
+  display: table-cell;
+  padding: 1em;
+  vertical-align: middle;
 `
 
 const H2 = styled.h2 `
   font-weight: 700;
   line-height: 1em;
   font-size: 1.2rem !important;
+  margin-bottom: 10px;
 `
 
 const P = styled.p `
   font-weight: 300;
   font-size: 0.8rem !important;
-  margin-bottom: 5px;
+  margin-top: 10px;
 `
 
 const Link = styled.a `
@@ -84,10 +85,10 @@ export const Card = ({ project }) => {
           <Wrapper>
             <TextWrapper>
               <H2>{project.description}</H2> 
-              <P>#{project.language}</P> 
               <Link href={project.link} target="_blank">
                   <Image src="/img/gh.png" />
               </Link>
+              <P>#{project.language}</P> 
             </TextWrapper>
           </Wrapper>
         </Content>

@@ -14,13 +14,15 @@ const Gallery = styled.div `
 display: grid;
 grid-template-columns: repeat(auto-fit, 200px);
 grid-column-gap: 40px;
-min-height: 700px;
+grid-row-gap: 20px;
+min-height: 500px;
 overflow: hidden;
 overflow: -moz-scrollbars-horizontal;
 justify-content: center;
 
 @media screen and (min-width: ${device.isDesktop}) {
   min-height: 600px;
+  grid-row-gap: 0;
 }
 `
 
