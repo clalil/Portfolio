@@ -11,17 +11,14 @@ align-self: center;
 color: var(--white);
 background-color: var(--black);
 border-radius: 100%;
-opacity: 0.8;
 transition: all 1.2s ease;
 border: 5px solid var(--light-border-color);
 box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.2);
 
 &:hover {
-  cursor: pointer;
 	-webkit-transform: scale(1.1);
 	-ms-transform: scale(1.1);
 	transform: scale(1.1);
-	opacity: 1;
   box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.2);
 }
 `
@@ -34,6 +31,11 @@ const Content = styled.div `
   height: 100%;
   border-radius: 100%;
   background-color: rgba(0, 0, 0, 0.50);
+  transition: all 1.2s ease;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.20);
+  }
 `
 
 const Wrapper = styled.div `
@@ -85,10 +87,16 @@ export const Card = ({ project }) => {
           <Wrapper>
             <TextWrapper>
               <H2>{project.description}</H2> 
-              <Link href={project.link} target="_blank">
-                  <Image src="/img/gh.png" />
-              </Link>
-              <P>#{project.language}</P> 
+              {project.link !== "" ?
+                (
+                  <>
+                  <Link href={project.link} target="_blank">
+                    <Image src="/img/gh.png" />
+                  </Link>
+                  <P>#{project.language}</P>
+                  </>
+                ) : ""
+              } 
             </TextWrapper>
           </Wrapper>
         </Content>

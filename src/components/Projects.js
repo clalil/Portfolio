@@ -6,8 +6,11 @@ import {Header} from "./styled/Header";
 import {device} from "./styled/Constants";
 
 const ProjectsSection = styled(Section)`
-  background: var(--second-shade);
   height: auto;
+  background: linear-gradient(var(--fourth-shade), var(--third-shade), var(--fourth-shade));
+  ${({ inView }) => inView && `
+    background: linear-gradient(var(--fourth-shade), var(--second-shade), var(--third-shade));
+  `}
 `
 
 const Gallery = styled.div `
@@ -26,7 +29,7 @@ justify-content: center;
 }
 `
 
-export const Projects = () => {
+export const Projects = ({inView}) => {
   const [pinnedProjects, SetPinnedProjects] = useState([])
 
   useEffect(() => {
@@ -40,7 +43,7 @@ export const Projects = () => {
   })
 
   return (
-    <ProjectsSection>
+    <ProjectsSection inView={inView}>
       <Header>Pinned projects</Header>
       {
       !pinnedProjects.length ? 

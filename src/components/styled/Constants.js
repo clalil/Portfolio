@@ -1,3 +1,3 @@
 export const device = {
-  isDesktop: `(min-width: 769px)`,
+  isDesktop: `(min-width: 768px)`,
 }

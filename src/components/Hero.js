@@ -3,9 +3,15 @@ import styled from "styled-components";
 import {Button} from "./styled/Button";
 import {Section} from "./styled/Section";
 import {Header} from "./styled/Header";
+import {Quote} from "./styled/Quote";
+import {device} from "./styled/Constants"
 
 const HeroSection = styled(Section)`
-  background: var(--first-shade);
+  background: linear-gradient(var(--first-shade), var(--second-shade));
+`
+
+const HeroQuote = styled(Quote)`
+  font-style: italic;
 `
 
 const H3 = styled.h3 `
@@ -15,15 +21,13 @@ const H3 = styled.h3 `
   color: var(--light-border-color);
 `
 
-const Quote = styled.div `
-  font-style: italic;
-  margin: 2rem;
-  color: var(--light-border-color);
-    &:hover {
-      cursor: pointer;
-      color: var(--white);
-      text-shadow: 1px 0 0 rgb(160,160,160);
-    }
+const Divider = styled.div `
+  display: block;
+  height: 40px;
+
+  @media screen and ${device.isDesktop} {
+    height: 100px;
+  }
 `
 
 export const Hero = () => {
@@ -32,10 +36,11 @@ export const Hero = () => {
     <HeroSection>
       <Header>Hi, I'm Clarissa.</Header>
         <H3>I love coding in teams.</H3>
-        <Quote>
+        <HeroQuote>
           <p>'Clarissa is a hard worker, commited and ambitious. She is a quick study and not afraid to ask questions. A great addition to any team.'</p>
           <p>~ S. Steindorsson</p>
-        </Quote>
+        </HeroQuote>
+        <Divider />
         <Button>Projects</Button>
         <Button>Contact</Button>
     </HeroSection>

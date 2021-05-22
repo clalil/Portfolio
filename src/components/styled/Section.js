@@ -7,10 +7,11 @@ const Wrapper = styled.section`
   width: 100%;
   text-align: center;
   display: block;
-  height: 530px;
+  min-height: 100vh;
 
-  @media screen and ${device.isDesktop} {
+  @media ${device.isDesktop} {
     padding: 60px 0;
+    min-height: 530px;
   }
 `
 
