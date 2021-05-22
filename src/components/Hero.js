@@ -10,15 +10,16 @@ const HeroSection = styled(Section)`
   background: linear-gradient(var(--first-shade), var(--second-shade));
 `
 
-const HeroQuote = styled(Quote)`
+const HeroQuote = styled(Quote) `
   font-style: italic;
 `
 
-const H3 = styled.h3 `
-  line-height: 0.;
-  letter-spacing: -0.5px;
+const H1 = styled(Header) `
+  font-size: 3.5rem;
+`
+
+const H3 = styled(Header) `
   font-size: 1.8em;
-  color: var(--light-border-color);
 `
 
 const Divider = styled.div `
@@ -34,7 +35,7 @@ export const Hero = () => {
   return(
     <>
     <HeroSection>
-      <Header>Hi, I'm Clarissa.</Header>
+      <H1>Hi, I'm Clarissa.</H1>
         <H3>I love coding in teams.</H3>
         <HeroQuote>
           <p>'Clarissa is a hard worker, commited and ambitious. She is a quick study and not afraid to ask questions. A great addition to any team.'</p>

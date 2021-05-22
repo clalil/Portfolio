@@ -12,12 +12,8 @@ const AboutSection = styled(Section)`
   `}
 `
 
-const H2 = styled.h2 `
-  margin: 2rem 0 1rem;
-  line-height: 0.;
-  letter-spacing: -0.5px;
-  font-size: 1.2em;
-  color: var(--light-border-color);
+const H2 = styled(Header) `
+  font-size: 1.8em;
 `
 
 const Container = styled.div `

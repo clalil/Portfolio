@@ -16,6 +16,6 @@ const StyledQuote = styled.div `
     }
 `
 
-export const Quote = ({children}) => {
-  return <StyledQuote>{children}</StyledQuote>
+export const Quote = ({className, children}) => {
+  return <StyledQuote className={className}>{children}</StyledQuote>
 };

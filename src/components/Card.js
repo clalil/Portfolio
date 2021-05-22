@@ -83,23 +83,23 @@ export const Card = ({ project }) => {
   return (
     <>
       <Circle background={`/img/${project.repo}.jpg`}>
-        <Content>
-          <Wrapper>
-            <TextWrapper>
-              <H2>{project.description}</H2> 
-              {project.link !== "" ?
-                (
-                  <>
+        {project.link !== "" ?
+          (
+            <>
+            <Content>
+              <Wrapper>
+                <TextWrapper>
+                  <H2>{project.description}</H2>
                   <Link href={project.link} target="_blank">
                     <Image src="/img/gh.png" />
                   </Link>
                   <P>#{project.language}</P>
-                  </>
-                ) : ""
-              } 
-            </TextWrapper>
-          </Wrapper>
-        </Content>
+                </TextWrapper>
+              </Wrapper>
+            </Content>
+            </>
+          ) : ""
+        }
       </Circle>
     </>
   )

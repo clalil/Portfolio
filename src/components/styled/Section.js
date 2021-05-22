@@ -15,6 +15,6 @@ const Wrapper = styled.section`
   }
 `
 
-export const Section = ({className, children}) => {
+export const Section = ({ className, children }) => {
   return <Wrapper className={className}>{children}</Wrapper>
 };

@@ -4,11 +4,10 @@ import styled from "styled-components";
 const H1 = styled.h1 `
   line-height: 1.2;
   letter-spacing: -0.5px;
-  font-size: 3.5em;
-  color: var(--white);
   margin: 40px;
+  color: var(--light-border-color);
 `
 
-export const Header = ({children}) => {
-  return <H1>{children}</H1>
+export const Header = ({ children, className }) => {
+  return <H1 className={className}>{children}</H1>
 };
