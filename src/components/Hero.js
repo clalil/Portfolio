@@ -11,7 +11,15 @@ const HeroSection = styled(Section)`
 `
 
 const HeroQuote = styled(Quote) `
+  color: var(--light-border-color);
   font-style: italic;
+  text-shadow: none;
+
+  &:hover {
+    cursor: pointer;
+    color: var(--white);
+    text-shadow: 1px 0 0 rgb(160,160,160);
+  }
 `
 
 const H1 = styled(Header) `
@@ -19,7 +27,7 @@ const H1 = styled(Header) `
 `
 
 const H3 = styled(Header) `
-  font-size: 1.8em;
+  font-size: 1.8rem;
 `
 
 const Divider = styled.div `

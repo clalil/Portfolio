@@ -3,17 +3,13 @@ import styled from 'styled-components';
 import {device} from "./Constants";
 
 const StyledQuote = styled.div `
+  color: var(--white);
   margin: 1rem 3rem;
-  color: var(--light-border-color);
+  text-shadow: 1px 0 0 rgb(160,160,160);
 
   @media ${device.isDesktop} {
     margin: 2rem;
   }
-    &:hover {
-      cursor: pointer;
-      color: var(--white);
-      text-shadow: 1px 0 0 rgb(160,160,160);
-    }
 `
 
 export const Quote = ({className, children}) => {
