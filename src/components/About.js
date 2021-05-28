@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import {Section} from "./styled/Section";
 import {Header} from "./styled/Header";
-import {Content} from "./Content";
+import {AboutContent} from "./AboutContent";
 import {Card} from "./Card";
 import axios from "axios";
 
@@ -18,7 +18,7 @@ const Container = styled.div `
   justify-content: center;
 `
 
-export const About = ({inView}) => {
+export const About = ({ inView }) => {
   const [content, setContent] = useState([])
   let contents;
 
@@ -31,7 +31,7 @@ export const About = ({inView}) => {
   if (content) {
     contents = content.map(content => {
       return (
-        <Content content={content} key={content.title} />
+        <AboutContent content={content} key={content.title} />
       )
     })
   }

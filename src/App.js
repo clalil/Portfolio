@@ -5,9 +5,9 @@ import {Projects} from "./components/Projects";
 import {throttle} from 'lodash';
 
 export const App = () => {
+  const handleThrottle = throttle(handleMenuPosition, 20)
   const [prevScrollPos, setprevScrollPos] = useState(window.pageYOffset)
   const [visible, setVisible] = useState(true)
-  const handleThrottle = throttle(handleMenuPosition, 20)
 
   useEffect(() => {
     window.addEventListener("scroll", handleThrottle)
@@ -26,7 +26,7 @@ export const App = () => {
 
   return (
     <>
-      <Hero inView={visible}/>
+      <Hero />
       <About inView={visible}/>
       <Projects inView={visible}/>
     </>

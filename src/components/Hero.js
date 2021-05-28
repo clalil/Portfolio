@@ -1,10 +1,46 @@
 import React from "react";
 import styled from "styled-components";
-import {Button} from "./styled/Button";
 import {Section} from "./styled/Section";
 import {Header} from "./styled/Header";
 import {Quote} from "./styled/Quote";
 import {device} from "./styled/Constants"
+
+const Button = styled.button`
+  display: inline-block;
+  text-transform: uppercase;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+  border-radius: 10px;
+  padding: 0.5rem 0;
+  margin: 0.5rem 1rem;
+  width: 11rem;
+  color: var(--white);
+  background-color: var(--black);
+  border: 2px solid var(--third-shade);
+
+  &:hover {
+    background-color: var(--third-shade);
+    border: 2px solid var(--black);
+    cursor: pointer;
+  }
+`
+
+const Divider = styled.div `
+  display: block;
+  height: 40px;
+
+  @media screen and ${device.isDesktop} {
+    height: 100px;
+  }
+`
+
+const H1 = styled(Header) `
+  font-size: 3.5rem;
+`
+
+const H3 = styled(Header) `
+  font-size: 1.8rem;
+`
 
 const HeroSection = styled(Section)`
   background: linear-gradient(var(--first-shade), var(--second-shade));
@@ -22,22 +58,6 @@ const HeroQuote = styled(Quote) `
   }
 `
 
-const H1 = styled(Header) `
-  font-size: 3.5rem;
-`
-
-const H3 = styled(Header) `
-  font-size: 1.8rem;
-`
-
-const Divider = styled.div `
-  display: block;
-  height: 40px;
-
-  @media screen and ${device.isDesktop} {
-    height: 100px;
-  }
-`
 
 export const Hero = () => {
   return(

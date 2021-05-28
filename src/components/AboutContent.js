@@ -7,7 +7,7 @@ const H2 = styled(Header) `
   font-size: 1.8rem;
 `
 
-export const Content = ({content}) => {
+export const AboutContent = ({ content }) => {
   return(
     <>
       <H2>{content.title}</H2>

@@ -1,53 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-const Circle = styled.div `
-position: relative;
-display: block;
-background: ${props => `url(${props.background}) top center / cover no-repeat`};
-height: 200px;
-width: 200px;
-align-self: center;
-color: var(--white);
-background-color: var(--black);
-border-radius: 100%;
-transition: all 1.2s ease;
-border: 5px solid var(--light-border-color);
-box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.2);
-
-&:hover {
-	-webkit-transform: scale(1.1);
-	-ms-transform: scale(1.1);
-	transform: scale(1.1);
-  box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.2);
-}
-`
-
-const Content = styled.div `
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 100%;
-  background-color: rgba(0, 0, 0, 0.50);
-  transition: all 1.2s ease;
-
-  &:hover {
-    background-color: rgba(0, 0, 0, 0.20);
-  }
-`
-
-const Wrapper = styled.div `
+const Center = styled.div `
   display: table;
   width: 100%;
   height: 100%;
-` 
-
-const TextWrapper = styled.div `
-  display: table-cell;
-  padding: 1em;
-  vertical-align: middle;
 `
 
 const H2 = styled.h2 `
@@ -55,16 +12,6 @@ const H2 = styled.h2 `
   line-height: 1em;
   font-size: 1.2rem !important;
   margin-bottom: 10px;
-`
-
-const P = styled.p `
-  font-weight: 300;
-  font-size: 0.8rem !important;
-  margin-top: 10px;
-`
-
-const Link = styled.a `
-  display: flex;
 `
 
 const Image = styled.img `
@@ -79,28 +26,81 @@ const Image = styled.img `
   }
 `
 
+const Link = styled.a `
+  display: flex;
+`
+
+const Overlay = styled.div `
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  background-color: rgba(0, 0, 0, 0.50);
+  transition: all 1.2s ease;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.20);
+  }
+`
+
+const P = styled.p `
+  font-weight: 300;
+  font-size: 0.8rem !important;
+  margin-top: 10px;
+`
+
+const Text = styled.div `
+  display: table-cell;
+  padding: 1em;
+  vertical-align: middle;
+`
+
+const Wrapper = styled.div `
+  position: relative;
+  display: block;
+  background: ${({background}) => `url(${background}) top center / cover no-repeat`};
+  height: 200px;
+  width: 200px;
+  align-self: center;
+  color: var(--white);
+  background-color: var(--black);
+  border-radius: 100%;
+  transition: all 1.2s ease;
+  border: 5px solid var(--light-border-color);
+  box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.2);
+
+  &:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.2);
+  }
+`
+
 export const Card = ({ project }) => {
   return (
     <>
-      <Circle background={`/img/${project.repo}.jpg`}>
+      <Wrapper background={`/img/${project.repo}.jpg`}>
         {project.link !== "" ?
           (
             <>
-            <Content>
-              <Wrapper>
-                <TextWrapper>
+            <Overlay>
+              <Center>
+                <Text>
                   <H2>{project.description}</H2>
                   <Link href={project.link} target="_blank">
-                    <Image src="/img/gh.png" />
+                  <Image src="/img/gh.png" />
                   </Link>
                   <P>#{project.language}</P>
-                </TextWrapper>
-              </Wrapper>
-            </Content>
+                </Text>
+              </Center>
+            </Overlay>
             </>
           ) : ""
         }
-      </Circle>
+      </Wrapper>
     </>
   )
 }
