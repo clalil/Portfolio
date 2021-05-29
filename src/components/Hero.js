@@ -30,7 +30,7 @@ const Divider = styled.div `
   display: block;
   height: 60px;
 
-  @media screen and ${device.isDesktop} {
+  @media screen and ${device.isLaptop} {
     height: 100px;
   }
 `

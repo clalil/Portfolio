@@ -7,7 +7,7 @@ import {Section} from "./styled/Section";
 
 const Footer = styled.div `
   color: var(--white);
-  margin: 1rem 0 0;
+  margin: 2rem 0 0;
   padding: 1rem 0 0;
   text-align: center;
   font-style: bold;
@@ -23,9 +23,8 @@ const Gallery = styled.div `
   overflow: -moz-scrollbars-horizontal;
   justify-content: center;
 
-  @media screen and (min-width: ${device.isDesktop}) {
-    min-height: 600px;
-    grid-row-gap: 0;
+  @media screen and ${device.isTablet} {
+    grid-template-columns: repeat(auto-fit, 300px);
   }
 `
 

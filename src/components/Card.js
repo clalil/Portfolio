@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import {device} from "./styled/Constants";
 
 const Center = styled.div `
   display: table;
@@ -76,6 +77,12 @@ const Wrapper = styled.div `
     -ms-transform: scale(1.1);
     transform: scale(1.1);
     box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.2);
+  }
+
+  @media screen and ${device.isTablet} {
+    height: 300px;
+    width: 300px;
+    grid-row-gap: 0;
   }
 `
 

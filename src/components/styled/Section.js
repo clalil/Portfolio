@@ -9,8 +9,13 @@ const Wrapper = styled.section`
   display: block;
   min-height: 100vh;
 
-  @media ${device.isDesktop} {
-    padding: 60px 0;
+  @media ${device.isTablet} {
+    padding: 60px;
+    min-height: 530px;
+  }
+
+  @media ${device.isLaptop} {
+    padding: 100px;
     min-height: 530px;
   }
 `

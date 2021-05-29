@@ -7,7 +7,7 @@ const StyledQuote = styled.div `
   margin: 1rem 3rem;
   text-shadow: 1px 0 0 rgb(160,160,160);
 
-  @media ${device.isDesktop} {
+  @media ${device.isTablet} {
     margin: 2rem;
   }
 `
