@@ -27,7 +27,7 @@ const Button = styled.button`
 
 const Divider = styled.div `
   display: block;
-  height: 40px;
+  height: 60px;
 
   @media screen and ${device.isDesktop} {
     height: 100px;
@@ -43,7 +43,10 @@ const H3 = styled(Header) `
 `
 
 const HeroSection = styled(Section)`
-  background: linear-gradient(var(--first-shade), var(--second-shade));
+  background: linear-gradient(var(--medium-border-color), var(--medium-border-color), var(--second-shade));
+  ${({ inView }) => inView && `
+    background: linear-gradient(var(--first-shade), var(--second-shade));
+  `}
 `
 
 const HeroQuote = styled(Quote) `
@@ -58,20 +61,28 @@ const HeroQuote = styled(Quote) `
   }
 `
 
+const Link = styled.a `
+  text-decoration: none;
+  color: inherit;
+`
 
-export const Hero = () => {
+const LinkedIn = "https://www.linkedin.com/in/living-and-breathing-tdd/"
+
+export const Hero = ({ inView }) => {
   return(
     <>
-    <HeroSection>
+    <HeroSection inView={inView}>
       <H1>Hi, I'm Clarissa.</H1>
         <H3>I love coding in teams.</H3>
         <HeroQuote>
-          <p>'Clarissa is a hard worker, commited and ambitious. She is a quick study and not afraid to ask questions. A great addition to any team.'</p>
-          <p>~ S. Steindorsson</p>
+          'Clarissa is a hard worker, commited and ambitious. She is a quick study and not afraid to ask questions. A great addition to any team.'
+          ~ S. Steindorsson
         </HeroQuote>
         <Divider />
         <Button>Projects</Button>
-        <Button>Contact</Button>
+        <Button>
+          <Link href={LinkedIn}>Contact</Link>
+        </Button>
     </HeroSection>
     </>
   )

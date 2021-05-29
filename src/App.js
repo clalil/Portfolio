@@ -26,7 +26,7 @@ export const App = () => {
 
   return (
     <>
-      <Hero />
+      <Hero inView={visible} />
       <About inView={visible}/>
       <Projects inView={visible}/>
     </>
