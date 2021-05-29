@@ -5,6 +5,15 @@ import {Section} from "./styled/Section";
 import {Header} from "./styled/Header";
 import {device} from "./styled/Constants";
 
+const Footer = styled.div `
+  color: var(--white);
+  margin: 1rem 0 0;
+  padding: 1rem 0 0;
+  text-align: center;
+  font-style: bold;
+  border-top: 1px solid var(--white);
+`
+
 const Gallery = styled.div `
   display: grid;
   grid-template-columns: repeat(auto-fit, 200px);
@@ -30,15 +39,6 @@ const ProjectsSection = styled(Section)`
   ${({ inView }) => inView && `
     background: linear-gradient(var(--fourth-shade), var(--second-shade), var(--third-shade));
   `}
-`
-
-const Footer = styled.div `
-  color: var(--white);
-  margin: 1rem 0 0;
-  padding: 1rem 0 0;
-  text-align: center;
-  font-style: bold;
-  border-top: 1px solid var(--white);
 `
 
 export const Projects = ({ inView }) => {
