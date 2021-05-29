@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import {Section} from "./styled/Section";
 import {Header} from "./styled/Header";
+import {device} from "./styled/Constants";
+import {Section} from "./styled/Section";
 import {Quote} from "./styled/Quote";
-import {device} from "./styled/Constants"
+import {HashLink} from 'react-router-hash-link'
 
 const Button = styled.button`
   display: inline-block;
@@ -43,6 +44,7 @@ const H3 = styled(Header) `
 `
 
 const HeroSection = styled(Section)`
+  min-height: 500px;
   background: linear-gradient(var(--medium-border-color), var(--medium-border-color), var(--second-shade));
   ${({ inView }) => inView && `
     background: linear-gradient(var(--first-shade), var(--second-shade));
@@ -79,7 +81,11 @@ export const Hero = ({ inView }) => {
           ~ S. Steindorsson
         </HeroQuote>
         <Divider />
-        <Button>Projects</Button>
+        <Button>
+          <HashLink smooth to="#projects" style={{textDecoration: "none", color:"inherit"}}>
+            Projects
+          </HashLink>
+        </Button>
         <Button>
           <Link href={LinkedIn}>Contact</Link>
         </Button>

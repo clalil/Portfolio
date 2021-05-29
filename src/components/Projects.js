@@ -32,6 +32,15 @@ const ProjectsSection = styled(Section)`
   `}
 `
 
+const Footer = styled.div `
+  color: var(--white);
+  margin: 1rem 0 0;
+  padding: 1rem 0 0;
+  text-align: center;
+  font-style: bold;
+  border-top: 1px solid var(--white);
+`
+
 export const Projects = ({ inView }) => {
   const [pinnedProjects, SetPinnedProjects] = useState([])
 
@@ -46,19 +55,24 @@ export const Projects = ({ inView }) => {
   })
 
   return (
-    <ProjectsSection inView={inView}>
-      <Header>Pinned projects</Header>
-      <H2>My favourite GitHub projects</H2>
-      {
-      !pinnedProjects.length ? 
-        <H2>Loading...</H2>
-        :
-        (
-          <Gallery>
-            {pinnedList}
-          </Gallery>
-        )
-      }
-    </ProjectsSection>
+    <div id="projects">
+      <ProjectsSection inView={inView}>
+        <Header>Pinned projects</Header>
+        <H2>My favourite GitHub projects</H2>
+        {
+        !pinnedProjects.length ? 
+          <H2>Loading...</H2>
+          :
+          (
+            <Gallery>
+              {pinnedList}
+            </Gallery>
+          )
+        }
+        <Footer>
+          © 2021 Made with React (v. {React.version})
+        </Footer>
+      </ProjectsSection>
+    </div>
   )
 };
