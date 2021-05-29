@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import {Card} from "./Card";
-import {Section} from "./styled/Section";
-import {Header} from "./styled/Header";
 import {device} from "./styled/Constants";
+import {Header} from "./styled/Header";
+import {Section} from "./styled/Section";
 
 const Footer = styled.div `
   color: var(--white);

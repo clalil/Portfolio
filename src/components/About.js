@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import {Section} from "./styled/Section";
-import {Header} from "./styled/Header";
 import {AboutContent} from "./AboutContent";
 import {Card} from "./Card";
+import {Header} from "./styled/Header";
+import {Section} from "./styled/Section";
 import axios from "axios";
 
 const AboutSection = styled(Section)`
