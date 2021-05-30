@@ -25,6 +25,7 @@ const Gallery = styled.div `
 
   @media screen and ${device.isTablet} {
     grid-template-columns: repeat(auto-fit, 300px);
+    grid-row-gap: 40px;
   }
 `
 
