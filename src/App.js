@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import {React, useState, useEffect} from "react";
+import {Hero} from "./components/Hero";
+import {About} from "./components/About";
+import {Projects} from "./components/Projects";
+import {throttle} from 'lodash';
 
-function App() {
+export const App = () => {
+  const handleThrottle = throttle(handleMenuPosition, 20)
+  const [prevScrollPos, setprevScrollPos] = useState(window.pageYOffset)
+  const [visible, setVisible] = useState(true)
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleThrottle)
+    return () => {
+     window.removeEventListener("scroll", handleThrottle)
+    }
+  }, [handleThrottle])
+
+  function handleMenuPosition () {
+    const currentScrollPos = window.pageYOffset
+    const visible = prevScrollPos > currentScrollPos
+
+    setprevScrollPos(currentScrollPos)
+    setVisible(visible)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Hero inView={visible} />
+      <About inView={visible}/>
+      <Projects inView={visible}/>
+    </>
+  )
 }
-
-export default App;
