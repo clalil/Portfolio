@@ -68,7 +68,7 @@ const Link = styled.a `
   color: inherit;
 `
 
-const LinkedIn = "https://www.linkedin.com/in/living-and-breathing-tdd/"
+const LinkedIn = "https://www.linkedin.com/in/clalil"
 
 export const Hero = ({ inView }) => {
   return(
